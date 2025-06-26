@@ -73,7 +73,7 @@ namespace lego_loam {
         float startOrientation;
         float endOrientation;
 
-        cloud_msgs::cloud_info segMsg; // info of segmented cloud
+        sc_cloud_msgs::sc_cloud_info segMsg; // info of segmented cloud
         std_msgs::Header cloudHeader;
 
         std::vector<std::pair<int8_t, int8_t> > neighborIterator; // neighbor iterator for segmentaiton process

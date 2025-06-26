@@ -8,7 +8,7 @@ namespace lego_loam {
         // callback 基本都是pcl->sensor msg，然后统一到runFeatureAssociation中处理
         subLaserCloud = nh.subscribe<sensor_msgs::PointCloud2>("/segmented_cloud", 1,  // 分割后的点云
                                                                &FeatureAssociation::laserCloudHandler, this);
-        subLaserCloudInfo = nh.subscribe<cloud_msgs::cloud_info>("/segmented_cloud_info", 1,  // 分割后带几何信息的点云
+        subLaserCloudInfo = nh.subscribe<sc_cloud_msgs::sc_cloud_info>("/segmented_cloud_info", 1,  // 分割后带几何信息的点云
                                                                  &FeatureAssociation::laserCloudInfoHandler, this);
         subOutlierCloud = nh.subscribe<sensor_msgs::PointCloud2>("/outlier_cloud", 1,
                                                                  &FeatureAssociation::outlierCloudHandler, this);
@@ -406,7 +406,7 @@ namespace lego_loam {
         newOutlierCloud = true;
     }
 
-    void FeatureAssociation::laserCloudInfoHandler(const cloud_msgs::cloud_infoConstPtr &msgIn) {
+    void FeatureAssociation::laserCloudInfoHandler(const sc_cloud_msgs::sc_cloud_infoConstPtr &msgIn) {
         timeNewSegmentedCloudInfo = msgIn->header.stamp.toSec();
         segInfo = *msgIn;
         newSegmentedCloudInfo = true;

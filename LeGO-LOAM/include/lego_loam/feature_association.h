@@ -43,7 +43,7 @@ namespace lego_loam{
 
         void outlierCloudHandler(const sensor_msgs::PointCloud2ConstPtr &msgIn);
 
-        void laserCloudInfoHandler(const cloud_msgs::cloud_infoConstPtr &msgIn);
+        void laserCloudInfoHandler(const sc_cloud_msgs::sc_cloud_infoConstPtr &msgIn);
 
         void adjustDistortion();
 
@@ -125,7 +125,7 @@ namespace lego_loam{
         bool newSegmentedCloudInfo;
         bool newOutlierCloud;
 
-        cloud_msgs::cloud_info segInfo;
+        sc_cloud_msgs::sc_cloud_info segInfo;
         std_msgs::Header cloudHeader;
 
         int systemInitCount;

@@ -12,7 +12,8 @@
 #include <nav_msgs/Odometry.h>
 #include <nav_msgs/Path.h>
 // 自定义msg
-#include "cloud_msgs/cloud_info.h"
+// #include "cloud_msgs/cloud_info.h"
+#include "sc_cloud_msgs/sc_cloud_info.h"
 // opencv
 // #include <opencv/cv.h>
 // OpenCV4计算机视觉库头文件

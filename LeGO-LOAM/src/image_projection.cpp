@@ -16,7 +16,7 @@ namespace lego_loam {
         pubGroundCloud = nh.advertise<sensor_msgs::PointCloud2>("/ground_cloud", 1);
         pubSegmentedCloud = nh.advertise<sensor_msgs::PointCloud2>("/segmented_cloud", 1);
         pubSegmentedCloudPure = nh.advertise<sensor_msgs::PointCloud2>("/segmented_cloud_pure", 1);
-        pubSegmentedCloudInfo = nh.advertise<cloud_msgs::cloud_info>("/segmented_cloud_info", 1);
+        pubSegmentedCloudInfo = nh.advertise<sc_cloud_msgs::sc_cloud_info>("/segmented_cloud_info", 1);
         pubOutlierCloud = nh.advertise<sensor_msgs::PointCloud2>("/outlier_cloud", 1);  // 离群点或异常点
 
         nanPoint.x = std::numeric_limits<float>::quiet_NaN();
